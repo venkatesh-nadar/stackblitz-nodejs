@@ -6,8 +6,15 @@ const port = 3000;
 app.use(express.json({ limit: '50mb' }));
 
 app.get('/', (req, res) => {
-  res.send('Callback test goes here again...  !!!');
+  console.log("cool");
+  res.send('Callback test goes here again !!!');
 });
+
+app.get('/abc', (req, res) => {
+  console.log("cool");
+  res.send(req.query);
+});
+
 app.post('/response/callback', (req, res) => {
   res.statusCode = 200;
   console.log(req.body);
